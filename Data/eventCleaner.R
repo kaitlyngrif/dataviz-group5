@@ -443,9 +443,8 @@ fun.draw_rink <- function(lines_scale = 0.5, rink_type = "full") {
   
 }
 
-
-filename = "roughEvents.RData"
-load(filename)
+filename = paste0("roughEvents_", year, ".rds")
+events = readRDS(filename)
 
 # Calculate percentage of events in each game with unknown skater strength  
 bug_check = events %>%
@@ -573,5 +572,5 @@ master_raw = bug_check %>%
       isGoal = ifelse(shotOutcome == 'goal', 1, 0))
 }
 
-filename = 'clean_events.RData'
-save(master_clean, file = filename)
+filename = paste0("cleanEvents_", year, ".csv")
+write.csv(master_clean, file = filename)
