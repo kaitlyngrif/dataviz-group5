@@ -1,8 +1,8 @@
 library(tidyverse)
 '%!in%' <- function(x,y)!('%in%'(x,y))
 
-
-dataFile = "C:/Users/admin/Desktop/STAT 656/repo/STAT656Project/csv2015_2024"
+year = 1415
+dataFile = "C:/Users/admin/Desktop/VIZA 676/dataviz-group5/Data/20142015"
 setwd(dataFile)
 
 my.files <- list.files(pattern = "*csv", recursive = TRUE)
@@ -24,5 +24,5 @@ events = all_files %>%
   select(-sparse_rate)
 
 
-filename = "roughEvents.RData"
-save(events, file = filename)
+filename = paste0("roughEvents_", year, ".rds")
+write_rds(events, file = filename)
