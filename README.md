@@ -13,7 +13,7 @@ This project explores scalable visualization techniques for big data using distr
 ## Folder Structure
 The repository is organized as follows:
 
-```
+```bash
 ├── Audio
 │   ├── Data                # Raw audio data files
 │   ├── Output              # Generated audio visualizations (waveforms, spectrograms, MFCC heatmaps)
